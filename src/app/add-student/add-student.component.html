@@ -1,0 +1,52 @@
+
+</style>
+<body>
+        <form novalidate  (ngSubmit)="onSubmit(f)" #f="ngForm">
+
+                <h1>Hello Student!</h1>
+                Enter Name: <input type="text" class="input" placeholder="Enter Name" name="name" [ngModel]="user.name" #fname="ngModel" minlength="2" required><br/>
+                 <div *ngIf="fname.errors?.required && fname.touched" >
+                  Please enter your name!
+                 </div>
+                 
+                 <div *ngIf="fname.errors?.minlength && fname.touched" >
+                     Please enter more than 2 letters!
+            
+                 </div>
+                 
+          <span  ngModelGroup>
+                  Enter Email:<input type="email" class="input" name="email" ngModel #e="ngModel" required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"><br/>
+                  <div *ngIf="e.errors?.required && e.touched" >
+                        Enter your Email!
+                 </div>
+                 
+                 <div *ngIf="e.errors?.pattern && e.touched">
+                  Invalid pattern for email !(Eg: nish@gmail.com)
+                  
+                 </div>
+                 Confirm Email:<input type="email" name="cmail"class="input" ngModel #ce="ngModel" required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$">
+                  
+                  <div *ngIf="ce.errors?.required && ce.touched" >
+                      Confirm email!
+                     </div>
+                  
+                  <div *ngIf="ce.errors?.invalid && e.touched" >
+                      Invalid pattern for email!
+                      
+                     </div>
+                  
+            </span><br/>
+              
+              Enter Gender: <input type="checkbox" class="input" name="gender" value="Male" class="checkbox" ngModel #male="ngModel" required>Male
+              <input type="checkbox"  name="gender" class="input" value="Female" class="checkbox" ngModel #female="ngModel" required>Female
+              
+              <div *ngIf="female.errors?.required || female.untouched">
+                  Enter your Gender!      
+                 </div>
+              
+              <br/>
+              <input type="submit" [disabled]="f.invalid">
+              
+              </form>
+</body>
+ 
