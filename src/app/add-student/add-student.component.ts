@@ -7,7 +7,7 @@ import { User } from './add-student.interface';
 })
 
 export class AddStudentComponent implements OnInit {
-    user: User = {
+    public user: User = {
       name:"Nishtha",
       account: {
         email:'',

@@ -31,6 +31,18 @@
           Confirming email is required
         </div>
       </div>
+        <br>
+        <label>
+          <span>Age</span>
+          <input type="text"  formControlName="age">
+        </label>
+
+        <div
+          class="error"
+          *ngIf="user.get('age').invalid && user.get('age').touched">
+          Age is not in required range
+        </div>
+      
       <br>
       <button type="submit" [disabled]="user.invalid">Sign up</button>
       

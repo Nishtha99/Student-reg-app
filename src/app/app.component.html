@@ -1,5 +1,14 @@
 <!-- <app-student-details></app-student-details> -->
-<app-add-student2>
 
-    
-</app-add-student2>
+<div>
+    <h1>
+        Routing
+    </h1>
+</div>
+
+<nav>
+  <a routerLink='/student-details' routerLinkActive='active'>DETAILS    </a>
+   <a routerLink='/add-student' routerLinkActive='active'>REACTIVE  </a>
+    <a routerLink='/add-student2' routerLinkActive='active'>TEMPLATE </a>
+</nav>
+<router-outlet></router-outlet>
