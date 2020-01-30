@@ -11,4 +11,22 @@
    <a routerLink='/add-student' routerLinkActive='active'>REACTIVE  </a>
     <a routerLink='/add-student2' routerLinkActive='active'>TEMPLATE </a>
 </nav>
+<h3>Json Data</h3>
+
+    
+
+<table style="border: 1px solid black;">
+<tr style="border: 1px solid black;">
+<th>ID</th>
+<th>Title</th>
+<th>Body</th>
+</tr>
+<tr *ngFor="let item of jsonData; let i = index" style="border: 1px solid black;">
+<td>{{item.id}}</td>
+<td>{{item.title}}</td>
+<td>{{item.body}}</td>
+</tr>
+</table>
+
+
 <router-outlet></router-outlet>

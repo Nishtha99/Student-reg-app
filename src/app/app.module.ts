@@ -9,7 +9,8 @@ import { AddStudent2Component } from './add-student2/add-student2.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
-
+import { JsondatapackService } from './jsondatapack.service';
+import { HttpClientModule } from '@angular/common/http';
 const routes: Routes = [
     
   {path: '', component: AddStudentComponent},
@@ -28,9 +29,10 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [JsondatapackService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
